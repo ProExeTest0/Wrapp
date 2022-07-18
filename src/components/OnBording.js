@@ -1,29 +1,10 @@
 import React, {useRef, useState} from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import Swiper from 'react-native-swiper';
-import Button from './Button';
-import Emoji from './Emoji';
-import {icons} from '../src/helper/iconConstant';
-
-const Textlable = ({lablename, textdata}) => {
-  return (
-    <View style={{marginTop: 90}}>
-      <Text style={{textAlign: 'center', fontWeight: '700', fontSize: 32}}>
-        {lablename}
-      </Text>
-      <Text
-        style={{
-          fontWeight: '400',
-          textAlign: 'center',
-          fontSize: 15,
-          marginTop: 15,
-          lineHeight: 20,
-        }}>
-        {textdata}
-      </Text>
-    </View>
-  );
-};
+import Button from '../helper/Button';
+import CommonText from '../helper/CommonText';
+import Emoji from '../helper/Emoji';
+import {icons} from '../helper/iconConstant';
 
 const Onboard = ({navigation}) => {
   const ref = useRef();
@@ -41,7 +22,7 @@ const Onboard = ({navigation}) => {
           marginBottom: 40,
         }}
         onPress={() => {
-          navigation.navigate('Signup');
+          navigation.navigate('signup');
         }}>
         <Text style={{fontWeight: '700'}}>Skip </Text>
         <Image style={{height: 17, width: 20}} source={icons.skipArrow} />
@@ -68,7 +49,8 @@ const Onboard = ({navigation}) => {
           <View>
             <Nextbtn />
             <Emoji iconSource={icons.firstonboard} />
-            <Textlable
+            <CommonText
+              textstyle={{marginTop: 90}}
               lablename={'Make new friends'}
               textdata={
                 '   Wrapp helps you truly connect with cool people in your area that share the same interests as you '
@@ -81,7 +63,8 @@ const Onboard = ({navigation}) => {
               iconSource={icons.secondonboard}
               emojiContainer={{backgroundColor: '#FBF3D7'}}
             />
-            <Textlable
+            <CommonText
+              textstyle={{marginTop: 90}}
               lablename={'Find new events'}
               textdata={
                 ' Wrapp up your week with a fun event in your area or even create your own! '
@@ -93,7 +76,8 @@ const Onboard = ({navigation}) => {
               iconSource={icons.thirdonbord}
               emojiContainer={{backgroundColor: '#E9E6FC'}}
             />
-            <Textlable
+            <CommonText
+              textstyle={{marginTop: 90}}
               lablename={'Let s begin!'}
               textdata={' Kick off your experienceby exploring the app '}
             />
@@ -107,7 +91,7 @@ const Onboard = ({navigation}) => {
               if (change < 2) {
                 ref.current.scrollBy(change + 1);
               } else {
-                navigation.navigate('Signup');
+                navigation.navigate('signup');
               }
             }}
           />

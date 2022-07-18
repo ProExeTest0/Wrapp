@@ -1,7 +1,7 @@
 //import liraries
 import React, {Component} from 'react';
 import {StyleSheet, SafeAreaView} from 'react-native';
-import ProgressLine from '../../components/ProgressLine';
+import ProgressLine from '../components/ProgressLine';
 import {useState} from 'react';
 const Email = () => {
   const [data, setData] = useState(0.5);

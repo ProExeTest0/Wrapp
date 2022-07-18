@@ -1,7 +1,7 @@
 //import liraries
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
-import Button from '../../components/Button';
+import Button from '../helper/Button';
 import {icons} from '../helper/iconConstant';
 import Modal from 'react-native-modal';
 import {TouchableOpacity} from 'react-native';
@@ -17,17 +17,12 @@ const Signup = ({navigation}) => {
         <View>
           <Button
             btnName={'Sign Up'}
-            btnstyle={{margin: 20, width: '75%', height: 75}}
+            btnstyle={styles.signupbtn}
             onpress={() => setModalVisible(true)}
           />
           <Button
             btnName={'Create your profile'}
-            btnstyle={{
-              borderWidth: 2,
-              backgroundColor: 'white',
-              width: '75%',
-              height: 75,
-            }}
+            btnstyle={styles.profilebtn}
           />
         </View>
       </View>
@@ -36,13 +31,8 @@ const Signup = ({navigation}) => {
         transparent={true}
         visible={modalVisible}
         style={{margin: 0}}>
-        <View style={styles.modelevent}>
-          <View
-            style={{
-              height: 335,
-              backgroundColor: 'white',
-              borderRadius: 20,
-            }}>
+        <View style={styles.modelbackground}>
+          <View style={styles.modelview}>
             <TouchableOpacity onPress={() => onHidePress()}>
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
@@ -61,10 +51,26 @@ const styles = StyleSheet.create({
     height: 500,
     width: '100%',
   },
-  modelevent: {
+  modelbackground: {
     backgroundColor: 'rgba(0,0,0,0.5)',
     flex: 1,
     justifyContent: 'flex-end',
+  },
+  signupbtn: {
+    margin: 20,
+    width: '75%',
+    height: 75,
+  },
+  profilebtn: {
+    borderWidth: 2,
+    backgroundColor: 'white',
+    width: '75%',
+    height: 75,
+  },
+  modelview: {
+    height: 335,
+    backgroundColor: 'white',
+    borderRadius: 20,
   },
 });
 export default Signup;
