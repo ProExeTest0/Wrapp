@@ -1,8 +1,8 @@
 //import liraries
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import Emoji from '../../components/Emoji';
-import Button from '../../components/Button';
+import Emoji from '../helper/Emoji';
+import Button from '../helper/Button';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,

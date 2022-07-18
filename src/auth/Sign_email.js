@@ -1,18 +1,8 @@
 //import liraries
 import React, {Component} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  SafeAreaView,
-} from 'react-native';
-import * as Progress from 'react-native-progress';
-
+import {StyleSheet, SafeAreaView} from 'react-native';
 import ProgressLine from '../../components/ProgressLine';
 import {useState} from 'react';
-
-// create a component
 const Email = () => {
   const [data, setData] = useState(0.5);
   return (
@@ -25,9 +15,5 @@ const Email = () => {
     </SafeAreaView>
   );
 };
-
-// define your styles
 const styles = StyleSheet.create({});
-
-//make this component available to the app
 export default Email;
