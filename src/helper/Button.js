@@ -1,4 +1,3 @@
-//import liraries
 import React, {Component} from 'react';
 import {
   View,
@@ -13,23 +12,20 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-// create a component
-const Button = ({btnName, onpress, btnstyle, img, isBorderButton}) => {
-  //   console.log('props',);
+const Button = ({btnName, onpress, btnstyle, img, isBorderButton, btnText}) => {
   console.log(onpress);
-
-  // const isBorderButton = true;
-
   return (
-    // <TouchableOpacity style={[styles.container, btnstyle]} onPress={onpress}>
     <TouchableOpacity
-      style={isBorderButton ? styles.boredrButtonStyle : styles.container}
+      style={[
+        isBorderButton
+          ? [styles.boredrButtonStyle, btnstyle]
+          : [styles.container, btnstyle],
+      ]}
       onPress={onpress}>
       <Image
         style={{
           height: 25,
           width: 25,
-          // backgroundColor: 'red',
           margin: 10,
           marginLeft: 25,
           top: 5,
@@ -37,12 +33,15 @@ const Button = ({btnName, onpress, btnstyle, img, isBorderButton}) => {
         source={img}
       />
       <Text
-        style={{
-          textAlign: 'center',
-          fontWeight: '700',
-          fontSize: 15,
-          bottom: 25,
-        }}>
+        style={[
+          {
+            textAlign: 'center',
+            fontWeight: '700',
+            fontSize: 15,
+            bottom: 25,
+          },
+          btnText,
+        ]}>
         {btnName}
       </Text>
     </TouchableOpacity>
@@ -57,6 +56,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     justifyContent: 'center',
     top: 20,
+    margin: 10,
   },
   boredrButtonStyle: {
     width: wp(75),

@@ -8,32 +8,20 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {icons} from '../helper/iconConstant';
+import CommonText from '../helper/CommonText';
 
 // create a component
 const Explore = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Emoji iconSource={icons.explore} />
-      <Text
-        style={{
-          textAlign: 'center',
-          fontWeight: '700',
-          fontSize: 32,
-          marginTop: hp(6.89),
-        }}>
-        Explore locally
-      </Text>
-      <Text
-        style={{
-          fontWeight: '400',
-          textAlign: 'center',
-          fontSize: 15,
-          marginHorizontal: wp(8.5),
-          marginTop: hp(1.47),
-          lineHeight: hp(2.77),
-        }}>
-        Wrapp is currently only available in Italy and Spain.
-      </Text>
+      <CommonText
+        lablename={'Explore locally'}
+        textdata={
+          'Explore locally Wrapp is currently only available in Italy and Spain.'
+        }
+      />
+
       <TouchableOpacity>
         <View
           style={{

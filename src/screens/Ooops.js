@@ -28,17 +28,16 @@ const Oops = ({navigation}) => {
             'You’ve encountered an issue. Try refreshing the page, and if this error persists, please contact us at hello@wrapp.co and we’ll get back to you ASAP!'
           }
         />
-        <TouchableOpacity>
-          <View
-            style={{
-              marginTop: hp(8),
-            }}>
-            <Button
-              btnName={'Try Again'}
-              onpress={() => navigation.navigate('explore')}
-            />
-          </View>
-        </TouchableOpacity>
+
+        <View
+          style={{
+            marginTop: hp(8),
+          }}>
+          <Button
+            btnName={'Try Again'}
+            onpress={() => navigation.navigate('explore')}
+          />
+        </View>
       </View>
     </ScrollView>
   );

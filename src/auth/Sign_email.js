@@ -1,19 +1,46 @@
-//import liraries
-import React, {Component} from 'react';
-import {StyleSheet, SafeAreaView} from 'react-native';
-import ProgressLine from '../components/ProgressLine';
-import {useState} from 'react';
-const Email = () => {
-  const [data, setData] = useState(0.5);
+import React from 'react';
+import {View, StyleSheet} from 'react-native';
+import Header from '../components/ProgressLine';
+import CommonText from '../helper/CommonText';
+import {TextInput} from 'react-native-paper';
+import Button from '../helper/Button';
+const EmailSignup = ({navigation}) => {
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <ProgressLine
-        value={data}
-        onAdd={() => setData(data + 0.1)}
-        onRemove={() => setData(data - 0.1)}
+    <>
+      <Header progress={20} />
+      <View>
+        <CommonText lablename={'Sign up with email'} />
+        <TextInput
+          label={'Email'}
+          placeholderTextColor={'#3C3C3C'}
+          activeUnderlineColor={'black'}
+          underlineColor={'black'}
+          style={{backgroundColor: null, margin: 10}}
+        />
+        <TextInput
+          label={'Password'}
+          placeholderTextColor={'#3C3C3C'}
+          underlineColor={'black'}
+          activeUnderlineColor={'black'}
+          secureTextEntry={true}
+          style={{backgroundColor: null, margin: 10}}
+        />
+        <TextInput
+          label={'Confirm Password'}
+          placeholderTextColor={'#3C3C3C'}
+          underlineColor={'black'}
+          activeUnderlineColor={'black'}
+          style={{backgroundColor: null, margin: 10}}
+        />
+      </View>
+      <Button
+        btnName={'Continue'}
+        onpress={() => navigation.navigate('maininfo')}
       />
-    </SafeAreaView>
+    </>
   );
 };
-const styles = StyleSheet.create({});
-export default Email;
+const styles = StyleSheet.create({
+  container: {},
+});
+export default EmailSignup;

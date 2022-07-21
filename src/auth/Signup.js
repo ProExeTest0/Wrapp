@@ -4,30 +4,30 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 import Button from '../helper/Button';
 import {icons} from '../helper/iconConstant';
 import Modal from 'react-native-modal';
-import {TouchableOpacity} from 'react-native';
-
+import CommonText from '../helper/CommonText';
 const Signup = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
-  const onHidePress = () => {
-    setModalVisible(false);
+  const onEmailSigninPress = () => {
+    navigation.navigate('emailsign');
+  };
+  const onGmailigninPress = () => {
+    navigation.navigate('progress');
+  };
+  const onappleSigninPress = () => {
+    navigation.navigate('emailsign');
   };
   return (
     <View style={styles.container}>
       <Image style={styles.imagestyle} source={icons.signupgroupphoto} />
-      {/* <View style={{marginTop: 40, backgroundColor: 'red'}}> */}
+
       <View>
         <Button
           btnName={'Sign Up'}
           btnstyle={styles.signupbtn}
           onpress={() => setModalVisible(true)}
         />
-        <Button
-          btnName={'Create your profile'}
-          // btnstyle={styles.profilebtn}
-          isBorderButton={true}
-        />
+        <Button btnName={'Create your profile'} isBorderButton={true} />
       </View>
-      {/* </View> */}
       <Modal
         animationType="slide"
         transparent={true}
@@ -35,17 +35,38 @@ const Signup = ({navigation}) => {
         style={{margin: 0}}>
         <View style={styles.modelbackground}>
           <View style={styles.modelview}>
+            <CommonText
+              lablename={'Sign up with'}
+              textstyle={{top: 30, marginRight: 150}}
+            />
             <Button
+              img={icons.email}
               iconSource={icons.apple}
               btnstyle={[styles.loginbtn]}
-              onpress={() => onHidePress()}
+              btnText={{marginRight: 150}}
+              onpress={() => {
+                onEmailSigninPress(), setModalVisible(false);
+              }}
+              btnName={'Email'}
             />
-            <Button btnstyle={styles.loginbtn} onpress={() => onHidePress()} />
+            <Button
+              img={icons.gmail}
+              btnstyle={styles.loginbtn}
+              btnText={{marginRight: 150}}
+              onpress={() => {
+                onGmailigninPress(), setModalVisible(false);
+              }}
+              btnName={'Gmail'}
+            />
             <Button
               img={icons.apple}
-              // iconSource={icons.apple}
               btnstyle={styles.loginbtnApple}
-              onpress={() => onHidePress()}
+              oonpress={() => {
+                onappleSigninPress(), setModalVisible(false);
+              }}
+              isBorderButton={true}
+              btnText={{color: 'white', marginRight: 50}}
+              btnName={'Sign Up with Apple'}
             />
           </View>
         </View>
@@ -78,9 +99,8 @@ const styles = StyleSheet.create({
     width: '75%',
     height: 75,
   },
-
   modelview: {
-    height: 335,
+    height: 380,
     backgroundColor: 'white',
     borderRadius: 20,
   },

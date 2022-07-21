@@ -9,4 +9,5 @@ export const icons = {
   email: require('../assets/icons/email.png'),
   gmail: require('../assets/icons/google_login.png'),
   apple: require('../assets/icons/apple_login.png'),
+  erro: require('../assets/icons/error.png'),
 };
