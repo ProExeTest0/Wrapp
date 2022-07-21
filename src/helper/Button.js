@@ -55,8 +55,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     borderRadius: 50,
     justifyContent: 'center',
-    top: 20,
-    margin: 10,
   },
   boredrButtonStyle: {
     width: wp(75),

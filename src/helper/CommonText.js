@@ -11,8 +11,6 @@ const CommonText = ({lablename, textdata, textstyle}) => {
     </View>
   );
 };
-
-// define your styles
 const styles = StyleSheet.create({
   headertext: {
     textAlign: 'center',
@@ -25,6 +23,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     marginTop: 15,
     lineHeight: 20,
+    paddingHorizontal: 30,
   },
 });
 

@@ -15,7 +15,7 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="emailsign"
+        // initialRouteName="emailsign"
         screenOptions={{headerShown: false}}>
         <Stack.Screen name="oops" component={Oops} />
         <Stack.Screen name="explore" component={Explore} />

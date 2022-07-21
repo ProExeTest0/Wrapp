@@ -11,7 +11,7 @@ const Onboard = ({navigation}) => {
   const [change, setChange] = useState(0);
   console.log('change', change);
 
-  const Nextbtn = ({onpress}) => {
+  const Nextbtn = () => {
     return (
       <TouchableOpacity
         style={{
@@ -31,8 +31,7 @@ const Onboard = ({navigation}) => {
   };
   return (
     <>
-      <View style={{flex: 1, backgroundColor: 'white'}}>
-        <View></View>
+      <View style={{flex: 4, backgroundColor: 'white'}}>
         <Swiper
           ref={ref}
           style={styles.wrapperimage}
@@ -71,6 +70,7 @@ const Onboard = ({navigation}) => {
               }
             />
           </View>
+
           <View style={{marginTop: 60}}>
             <Emoji
               iconSource={icons.thirdonbord}
@@ -83,19 +83,19 @@ const Onboard = ({navigation}) => {
             />
           </View>
         </Swiper>
-
-        <View style={{marginBottom: 95}}>
-          <Button
-            btnName={change < 2 ? 'Continue' : 'Explore'}
-            onpress={() => {
-              if (change < 2) {
-                ref.current.scrollBy(change + 1);
-              } else {
-                navigation.navigate('signup');
-              }
-            }}
-          />
-        </View>
+      </View>
+      <View style={{flex: 1, backgroundColor: 'white'}}>
+        <Button
+          btnName={change < 2 ? 'Continue' : 'Explore'}
+          btnstyle={{width: '45%'}}
+          onpress={() => {
+            if (change < 2) {
+              ref.current.scrollBy(change + 1);
+            } else {
+              navigation.navigate('signup');
+            }
+          }}
+        />
       </View>
     </>
   );
@@ -105,5 +105,6 @@ const styles = StyleSheet.create({
   wrapperimage: {
     marginTop: 60,
     marginBottom: 190,
+    backgroundColor: 'white',
   },
 });
